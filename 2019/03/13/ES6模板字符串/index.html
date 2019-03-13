@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>剑起生寒轻酌墨</title>
+  <title>ES6模板字符串 | 剑起生寒轻酌墨</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="剑起生寒轻酌墨">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="为了能够让我们更加方便的拼接，操作字符串，ES6出了模板字符串。模板字符串是用`反引号代替常规字符串的’单引号或者”双引号，从而让字符串拥有可以将一部分替换成变量拼接在一起能力，当然，模板字符串不仅仅如此。 基本语法先看一个简单的例子1234let message = `hello`;console.log(message); // &quot;hello&quot; console.log(typeof messa">
+<meta name="keywords" content="模板字符串">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6模板字符串">
+<meta property="og:url" content="http://yoursite.com/2019/03/13/ES6模板字符串/index.html">
 <meta property="og:site_name" content="剑起生寒轻酌墨">
+<meta property="og:description" content="为了能够让我们更加方便的拼接，操作字符串，ES6出了模板字符串。模板字符串是用`反引号代替常规字符串的’单引号或者”双引号，从而让字符串拥有可以将一部分替换成变量拼接在一起能力，当然，模板字符串不仅仅如此。 基本语法先看一个简单的例子1234let message = `hello`;console.log(message); // &quot;hello&quot; console.log(typeof messa">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-13T03:18:26.684Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="剑起生寒轻酌墨">
+<meta name="twitter:title" content="ES6模板字符串">
+<meta name="twitter:description" content="为了能够让我们更加方便的拼接，操作字符串，ES6出了模板字符串。模板字符串是用`反引号代替常规字符串的’单引号或者”双引号，从而让字符串拥有可以将一部分替换成变量拼接在一起能力，当然，模板字符串不仅仅如此。 基本语法先看一个简单的例子1234let message = `hello`;console.log(message); // &quot;hello&quot; console.log(typeof messa">
   
   
     <link rel="icon" href="/img/avatar.jpg">
@@ -150,16 +155,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-ES6模板字符串" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-ES6模板字符串" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/13/ES6模板字符串/">ES6模板字符串</a>
+    <h1 class="article-title" itemprop="name">
+      ES6模板字符串
     </h1>
   
 
@@ -176,9 +179,35 @@
 <h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="先看一个简单的例子"><a href="#先看一个简单的例子" class="headerlink" title="先看一个简单的例子"></a>先看一个简单的例子</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> message = <span class="string">`hello`</span>;</span><br><span class="line"><span class="built_in">console</span>.log(message); <span class="comment">// "hello" </span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> message); <span class="comment">// "string"</span></span><br><span class="line"><span class="built_in">console</span>.log(message.length); <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
 <p>通过上述例子，可以看出，其实模板字符串创建的就是普通的字符串，没有什么特别的地方。当然，如果想<strong>创建多行的字符串</strong>，以前的方法可能是这样：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> text = <span class="string">"hello\nworld"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(text);  <span class="comment">//hello</span></span><br><span class="line">                    <span class="comment">//world</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/03/13/ES6模板字符串/#more">more >></a>
-        
+<a id="more"></a>
+<p>而如果使用模板字符串，就可以直接换行写，或者用\n：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> text =<span class="string">`hello\nworld`</span>;</span><br><span class="line"><span class="keyword">var</span> text1 =<span class="string">`hello </span></span><br><span class="line"><span class="string">world`</span>;</span><br><span class="line"><span class="built_in">console</span>.log(text);  <span class="comment">//hello </span></span><br><span class="line">                    <span class="comment">//world </span></span><br><span class="line"><span class="built_in">console</span>.log(text1); <span class="comment">//hello </span></span><br><span class="line">                    <span class="comment">//world</span></span><br></pre></td></tr></table></figure>
+<p>使用模板字符串还有值得注意的几点：</p>
+<p><strong>1.空格符（空白符）也会占位置：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> text=<span class="string">`hello</span></span><br><span class="line"><span class="string">          world`</span>;</span><br><span class="line"><span class="built_in">console</span>.log(text);           <span class="comment">//hello</span></span><br><span class="line">                             <span class="comment">//world</span></span><br><span class="line"><span class="built_in">console</span>.log(text.length)     <span class="comment">//27</span></span><br></pre></td></tr></table></figure>
+<p><strong>2.如果想让\n输出，可以使用转义字符，变为\\n，或者直接使用String.raw:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> text =<span class="built_in">String</span>.raw<span class="string">`hello\nworld`</span>;</span><br><span class="line"><span class="keyword">var</span> text1 =<span class="string">`hello\\nworld`</span>;</span><br><span class="line"><span class="built_in">console</span>.log(text);              <span class="comment">//hello\nworld </span></span><br><span class="line"><span class="built_in">console</span>.log(text1);             <span class="comment">//hello\nworld</span></span><br></pre></td></tr></table></figure>
+<h2 id="进入正题"><a href="#进入正题" class="headerlink" title="进入正题"></a>进入正题</h2><p>之前说介绍的功能只能说是普通字符串的改良版，下面介绍真正的模板字符串强大的地方，可以<strong>嵌入变量</strong>而且写法超级简单，具体代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myName = <span class="string">"moonburn"</span>;</span><br><span class="line"><span class="keyword">let</span> message = <span class="string">`hello,my name is <span class="subst">$&#123;myName&#125;</span>`</span>;</span><br><span class="line"><span class="built_in">console</span>.log(message)           <span class="comment">//"hello,my name is moonburn"</span></span><br></pre></td></tr></table></figure>
+<p>=&gt;对比老版写法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myName = <span class="string">"moonburn"</span>;</span><br><span class="line"><span class="keyword">var</span> message = <span class="string">'hello,my name is '</span>+ myName;</span><br><span class="line"><span class="built_in">console</span>.log(message)           <span class="comment">//"hello,my name is moonburn"</span></span><br></pre></td></tr></table></figure></p>
+<p>当然，模板字符串接受的不仅仅是变量，还可以是函数回调，简单的计算，比如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> jiao= <span class="number">0.1</span>,</span><br><span class="line">message = <span class="string">`<span class="subst">$&#123;jiao&#125;</span>角等于<span class="subst">$&#123;jiao*<span class="number">10</span>&#125;</span>分，也等于<span class="subst">$&#123;(jiao* <span class="number">0.1</span>).toFixed(<span class="number">3</span>)&#125;</span>元。`</span></span><br><span class="line"><span class="built_in">console</span>.log(message)           <span class="comment">//"0.1角等于1分，也等于0.010元。"</span></span><br></pre></td></tr></table></figure>
+<p>甚至是模板字符串本身：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> myName = <span class="string">"moonburn"</span>;</span><br><span class="line"><span class="keyword">let</span> message = <span class="string">`hello,<span class="subst">$&#123;<span class="string">`my name is <span class="subst">$&#123;myName&#125;</span>`</span>&#125;</span>`</span>;</span><br><span class="line"><span class="built_in">console</span>.log(message)           <span class="comment">//"hello,my name is moonburn"</span></span><br></pre></td></tr></table></figure>
+<p>不仅如此，ES6还贴心的出了模板标签（Tagged Templates）。</p>
+<h2 id="模板标签"><a href="#模板标签" class="headerlink" title="模板标签"></a>模板标签</h2><p>声明一个模板标签：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> text = sayHello<span class="string">`hello`</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>正如你所看到的，sayHello就是模板标签，那么这个到底是干什么的呢？<br>可以看到，下面，我们声明的一个和模板标签同名的函数，这个函数就是模板标签的本体！具体有什么用呢？看下面这个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> text = sayHello<span class="string">`hello`</span>; </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params">array1,...array2</span>)</span>&#123; </span><br><span class="line">    <span class="built_in">console</span>.log(array1); 	<span class="comment">//["hello"] </span></span><br><span class="line">    <span class="built_in">console</span>.log(array2); 	<span class="comment">//undefined return 123;</span></span><br><span class="line"> &#125; </span><br><span class="line"><span class="built_in">console</span>.log(text) 	        <span class="comment">//123</span></span><br></pre></td></tr></table></figure>
+<p>是不是有点明白了？嗯，那我们继续深一步探讨，其实这个模板标签也就是sayHello把模板字符串hello当做参数（两个参数具体怎么分配，我们下面在探讨），然后经过一系列的计算，最后返回一个字符串return 123，给text,所以最后text的值是123。<br>下面我们再看一个复杂一点的例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> word= <span class="string">"world"</span> </span><br><span class="line"><span class="keyword">let</span> name = <span class="string">"moonburn"</span> </span><br><span class="line"><span class="keyword">let</span> text = sayHello<span class="string">`hello <span class="subst">$&#123;word&#125;</span>,my name is <span class="subst">$&#123;name&#125;</span>`</span>; </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params">array1,...array2</span>)</span>&#123; </span><br><span class="line">    <span class="built_in">console</span>.log(array1);	 <span class="comment">//["hello ",",my name is ",""] </span></span><br><span class="line">    <span class="built_in">console</span>.log(array2); 	 <span class="comment">//["world", "moonburn"] </span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">123</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="built_in">console</span>.log(text) 	         <span class="comment">//123</span></span><br></pre></td></tr></table></figure>
+<p>通过这个例子，我们可以明白，函数的第一个参数，就是模板字符串中非变量的部分组成的数组，值得注意的是，模板字符串的最开始和最后一定要是普通字符串，如果是变量开始或者结尾，就像上述例子，那么就会有空字符串也就是””出现，通过这一点，我们就可以保证，第一个参数的长度永远比第二个参数长一个单位，也就是说array1.length === array2.length+1恒为true。第二个参数是什么呢？显而易见了，就是变量。那么我们来看看默认的模板标签是怎么样的呢？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> word= <span class="string">"world"</span> </span><br><span class="line"><span class="keyword">let</span> name = <span class="string">"moonburn"</span> </span><br><span class="line"><span class="keyword">let</span> text = sayHello<span class="string">`hello <span class="subst">$&#123;word&#125;</span>,my name is <span class="subst">$&#123;name&#125;</span>`</span>; </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params">array1,...array2</span>)</span>&#123; </span><br><span class="line">    <span class="keyword">let</span> result = <span class="string">""</span>; </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; array2.length; i++) &#123; </span><br><span class="line">        result += array1[i]; </span><br><span class="line">        result += array2[i];</span><br><span class="line">    &#125; 	<span class="comment">//加上最后一个普通字符串。 </span></span><br><span class="line">    result += array1[array1.length - <span class="number">1</span>]; </span><br><span class="line">    <span class="keyword">return</span> result; </span><br><span class="line">&#125; </span><br><span class="line"><span class="built_in">console</span>.log(text) </span><br><span class="line">        <span class="comment">//"hello world,my name is moonburn"</span></span><br></pre></td></tr></table></figure>
+<p>当然，array2的值不仅仅只是字符串，如果是需要计算的数，或者回调函数，那么计算完毕之后再进行模板标签的函数调用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> word= <span class="string">"world"</span> </span><br><span class="line"><span class="keyword">let</span> name = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"函数调用"</span>) </span><br><span class="line">    <span class="keyword">return</span> <span class="string">"moonburn"</span> </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">let</span> text = sayHello<span class="string">`hello <span class="subst">$&#123;word&#125;</span>,my name is <span class="subst">$&#123;name()&#125;</span>`</span>; </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params">array1,...array2</span>)</span>&#123; </span><br><span class="line">    <span class="keyword">let</span> result = <span class="string">""</span>; </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; array2.length; i++) &#123; </span><br><span class="line">        result += array1[i]; </span><br><span class="line">        result += array2[i]; </span><br><span class="line">    &#125; 	            <span class="comment">//加上最后一个普通字符串。 </span></span><br><span class="line">    result += array1[array1.length - <span class="number">1</span>]; </span><br><span class="line">    <span class="keyword">return</span> result; </span><br><span class="line">&#125; </span><br><span class="line"><span class="built_in">console</span>.log(text) 	<span class="comment">//函数调用 //"hello world,my name is moonburn"</span></span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>不带变量的模板字符串就是普通字符串的加强版，换行之类的操作更加方便，注意空格。<br>带变量的模板字符串可以接受变量计算，函数回调等，最后输出的还是字符串。<br>模板标签可以自己人性化配置模板字符串，接受2个参数，返回值也是自己定义。</p>
+<p>作者：moonburn<br>链接：<a href="https://www.jianshu.com/p/1bf65c57b42e" target="_blank" rel="noopener">https://www.jianshu.com/p/1bf65c57b42e</a><br>來源：简书<br>简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。</p>
+
       
 
       
@@ -200,16 +229,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/13/ES6模板字符串/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/13/ES6模板字符串/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/12/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -229,155 +317,14 @@
 
 
 
-
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/12/hello-world/">Hello World</a>
-    </h1>
   
 
-        
-        <a href="/2019/03/12/hello-world/" class="archive-article-date">
-  	<time datetime="2019-03-12T08:42:39.486Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-test" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/12/test/">test</a>
-    </h1>
   
 
-        
-        <a href="/2019/03/12/test/" class="archive-article-date">
-  	<time datetime="2019-03-12T02:39:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><p><code>$ rm -rf /</code></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#inlcude<span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        printf('hello world');</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p><del>删除线</del><br><strong>加粗</strong></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">test</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/test/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
+
   
 
 
@@ -400,8 +347,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
