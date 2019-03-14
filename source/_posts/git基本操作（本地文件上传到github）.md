@@ -6,6 +6,8 @@ tags: [Git]
 
 > clone项目到本地
 
+<!-- more -->
+
 使用Git的第一步永远是git clone，clone下来的文件夹名称默认为url最后一个斜杠后面的名称，如果不想用默认的名称，我们还可以通过在url后面传递参数来修改默认的名称，如下代码
 
 ```javascript
@@ -25,8 +27,6 @@ git pull origin dev
 ```
 
 在切换好分支后，便可以进行正常的开发，调试等步骤
-
-<!-- more -->
 
 > 提交
 
