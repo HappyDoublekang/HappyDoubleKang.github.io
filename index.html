@@ -176,17 +176,6 @@
 <p>clone项目到本地</p>
 </blockquote>
 <p>使用Git的第一步永远是git clone，clone下来的文件夹名称默认为url最后一个斜杠后面的名称，如果不想用默认的名称，我们还可以通过在url后面传递参数来修改默认的名称，如下代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="comment">//github.com/HappyDoublekang/VueProject.git</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>建立分支</p>
-</blockquote>
-<p>一般线上的项目会有master和dev分支，而master分支上的东西是不允许随便乱动的，开发只在dev分支上，因此我们需要建立一个dev分支，并把远程仓库里的代码拉取到本地</p>
-<ul>
-<li>git checkout -b dev  （检查有没有dev这个分支）</li>
-<li>git pull origin dev  （提交到dev这个分支）</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b dev</span><br><span class="line">git pull origin dev</span><br></pre></td></tr></table></figure>
-<p>在切换好分支后，便可以进行正常的开发，调试等步骤</p>
         
           <a class="article-more-a" href="/2019/03/14/git基本操作（本地文件上传到github）/#more">more >></a>
         
@@ -285,9 +274,6 @@ gitalk.render('gitalk-container')
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="为了能够让我们更加方便的拼接，操作字符串，ES6出了模板字符串。"><a href="#为了能够让我们更加方便的拼接，操作字符串，ES6出了模板字符串。" class="headerlink" title="为了能够让我们更加方便的拼接，操作字符串，ES6出了模板字符串。"></a>为了能够让我们更加方便的拼接，操作字符串，ES6出了模板字符串。</h2><p>模板字符串是用`反引号代替常规字符串的’单引号或者”双引号，从而让字符串拥有可以将一部分替换成变量拼接在一起能力，当然，模板字符串不仅仅如此。</p>
-<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="先看一个简单的例子"><a href="#先看一个简单的例子" class="headerlink" title="先看一个简单的例子"></a>先看一个简单的例子</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> message = <span class="string">`hello`</span>;</span><br><span class="line"><span class="built_in">console</span>.log(message); <span class="comment">// "hello" </span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> message); <span class="comment">// "string"</span></span><br><span class="line"><span class="built_in">console</span>.log(message.length); <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
-<p>通过上述例子，可以看出，其实模板字符串创建的就是普通的字符串，没有什么特别的地方。当然，如果想<strong>创建多行的字符串</strong>，以前的方法可能是这样：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> text = <span class="string">"hello\nworld"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(text);  <span class="comment">//hello</span></span><br><span class="line">                    <span class="comment">//world</span></span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2019/03/13/ES6模板字符串/#more">more >></a>
         

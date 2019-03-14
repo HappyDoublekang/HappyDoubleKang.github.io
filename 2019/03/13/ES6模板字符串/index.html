@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>ES6模板字符串 | 剑起生寒轻酌墨</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="为了能够让我们更加方便的拼接，操作字符串，ES6出了模板字符串。模板字符串是用`反引号代替常规字符串的’单引号或者”双引号，从而让字符串拥有可以将一部分替换成变量拼接在一起能力，当然，模板字符串不仅仅如此。 基本语法先看一个简单的例子1234let message = `hello`;console.log(message); // &quot;hello&quot; console.log(typeof messa">
+  <meta name="description" content="为了能够让我们更加方便的拼接，操作字符串，ES6出了模板字符串。模板字符串是用`反引号代替常规字符串的’单引号或者”双引号，从而让字符串拥有可以将一部分替换成变量拼接在一起能力，当然，模板字符串不仅仅如此。">
 <meta name="keywords" content="模板字符串">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ES6模板字符串">
 <meta property="og:url" content="http://yoursite.com/2019/03/13/ES6模板字符串/index.html">
 <meta property="og:site_name" content="剑起生寒轻酌墨">
-<meta property="og:description" content="为了能够让我们更加方便的拼接，操作字符串，ES6出了模板字符串。模板字符串是用`反引号代替常规字符串的’单引号或者”双引号，从而让字符串拥有可以将一部分替换成变量拼接在一起能力，当然，模板字符串不仅仅如此。 基本语法先看一个简单的例子1234let message = `hello`;console.log(message); // &quot;hello&quot; console.log(typeof messa">
+<meta property="og:description" content="为了能够让我们更加方便的拼接，操作字符串，ES6出了模板字符串。模板字符串是用`反引号代替常规字符串的’单引号或者”双引号，从而让字符串拥有可以将一部分替换成变量拼接在一起能力，当然，模板字符串不仅仅如此。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-13T06:14:55.622Z">
+<meta property="og:updated_time" content="2019-03-14T08:21:27.359Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6模板字符串">
-<meta name="twitter:description" content="为了能够让我们更加方便的拼接，操作字符串，ES6出了模板字符串。模板字符串是用`反引号代替常规字符串的’单引号或者”双引号，从而让字符串拥有可以将一部分替换成变量拼接在一起能力，当然，模板字符串不仅仅如此。 基本语法先看一个简单的例子1234let message = `hello`;console.log(message); // &quot;hello&quot; console.log(typeof messa">
+<meta name="twitter:description" content="为了能够让我们更加方便的拼接，操作字符串，ES6出了模板字符串。模板字符串是用`反引号代替常规字符串的’单引号或者”双引号，从而让字符串拥有可以将一部分替换成变量拼接在一起能力，当然，模板字符串不仅仅如此。">
   
   
     <link rel="icon" href="/img/avatar.jpg">
@@ -176,10 +176,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="为了能够让我们更加方便的拼接，操作字符串，ES6出了模板字符串。"><a href="#为了能够让我们更加方便的拼接，操作字符串，ES6出了模板字符串。" class="headerlink" title="为了能够让我们更加方便的拼接，操作字符串，ES6出了模板字符串。"></a>为了能够让我们更加方便的拼接，操作字符串，ES6出了模板字符串。</h2><p>模板字符串是用`反引号代替常规字符串的’单引号或者”双引号，从而让字符串拥有可以将一部分替换成变量拼接在一起能力，当然，模板字符串不仅仅如此。</p>
+<a id="more"></a>
 <h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="先看一个简单的例子"><a href="#先看一个简单的例子" class="headerlink" title="先看一个简单的例子"></a>先看一个简单的例子</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> message = <span class="string">`hello`</span>;</span><br><span class="line"><span class="built_in">console</span>.log(message); <span class="comment">// "hello" </span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> message); <span class="comment">// "string"</span></span><br><span class="line"><span class="built_in">console</span>.log(message.length); <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
 <p>通过上述例子，可以看出，其实模板字符串创建的就是普通的字符串，没有什么特别的地方。当然，如果想<strong>创建多行的字符串</strong>，以前的方法可能是这样：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> text = <span class="string">"hello\nworld"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(text);  <span class="comment">//hello</span></span><br><span class="line">                    <span class="comment">//world</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
 <p>而如果使用模板字符串，就可以直接换行写，或者用\n：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> text =<span class="string">`hello\nworld`</span>;</span><br><span class="line"><span class="keyword">var</span> text1 =<span class="string">`hello </span></span><br><span class="line"><span class="string">world`</span>;</span><br><span class="line"><span class="built_in">console</span>.log(text);  <span class="comment">//hello </span></span><br><span class="line">                    <span class="comment">//world </span></span><br><span class="line"><span class="built_in">console</span>.log(text1); <span class="comment">//hello </span></span><br><span class="line">                    <span class="comment">//world</span></span><br></pre></td></tr></table></figure>
 <p>使用模板字符串还有值得注意的几点：</p>
