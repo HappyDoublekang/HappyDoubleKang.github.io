@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>剑起生寒轻酌墨</title>
+  <title>git基本操作（本地文件上传到github） | 剑起生寒轻酌墨</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="剑起生寒轻酌墨">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="clone项目到本地  使用Git的第一步永远是git clone，clone下来的文件夹名称默认为url最后一个斜杠后面的名称，如果不想用默认的名称，我们还可以通过在url后面传递参数来修改默认的名称，如下代码 1git clone https://github.com/HappyDoublekang/VueProject.git  建立分支  一般线上的项目会有master和dev分支，而m">
+<meta name="keywords" content="Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git基本操作（本地文件上传到github）">
+<meta property="og:url" content="http://yoursite.com/2019/03/14/git基本操作（本地文件上传到github）/index.html">
 <meta property="og:site_name" content="剑起生寒轻酌墨">
+<meta property="og:description" content="clone项目到本地  使用Git的第一步永远是git clone，clone下来的文件夹名称默认为url最后一个斜杠后面的名称，如果不想用默认的名称，我们还可以通过在url后面传递参数来修改默认的名称，如下代码 1git clone https://github.com/HappyDoublekang/VueProject.git  建立分支  一般线上的项目会有master和dev分支，而m">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-14T07:08:31.551Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="剑起生寒轻酌墨">
+<meta name="twitter:title" content="git基本操作（本地文件上传到github）">
+<meta name="twitter:description" content="clone项目到本地  使用Git的第一步永远是git clone，clone下来的文件夹名称默认为url最后一个斜杠后面的名称，如果不想用默认的名称，我们还可以通过在url后面传递参数来修改默认的名称，如下代码 1git clone https://github.com/HappyDoublekang/VueProject.git  建立分支  一般线上的项目会有master和dev分支，而m">
   
   
     <link rel="icon" href="/img/avatar.jpg">
@@ -150,16 +155,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-git基本操作（本地文件上传到github）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-git基本操作（本地文件上传到github）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/14/git基本操作（本地文件上传到github）/">git基本操作（本地文件上传到github）</a>
+    <h1 class="article-title" itemprop="name">
+      git基本操作（本地文件上传到github）
     </h1>
   
 
@@ -187,9 +190,84 @@
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b dev</span><br><span class="line">git pull origin dev</span><br></pre></td></tr></table></figure>
 <p>在切换好分支后，便可以进行正常的开发，调试等步骤</p>
-        
-          <a class="article-more-a" href="/2019/03/14/git基本操作（本地文件上传到github）/#more">more >></a>
-        
+<a id="more"></a>
+<blockquote>
+<p>提交</p>
+</blockquote>
+<p>在开发完毕，功能测试结束后，便要将本地代码提到远程仓库中</p>
+<ul>
+<li>git add -A  （全部选择）</li>
+<li>git commit -m “description” （暂存代码并添加代码描述）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add -A</span><br><span class="line">git commit -m <span class="string">"description"</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>拉取并解决冲突</p>
+</blockquote>
+<p>利用pull命令，从远程仓库中拉取最新的代码</p>
+<ul>
+<li>git pull origin dev  （从dev分支拉代码）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin dev</span><br></pre></td></tr></table></figure>
+<p>此时可能会出现冲突，如果出现了冲突先解决冲突，在解决完冲突后，利用rebase命令提交修改冲突后的文件</p>
+<ul>
+<li>git add -A  （全部选择）</li>
+<li>git rebase –continue  （继续暂存）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add -A</span><br><span class="line">git rebase --<span class="keyword">continue</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>push至远程仓库</p>
+</blockquote>
+<ul>
+<li>git push origin dev  （正式推送到dev分支）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin dev</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>打tag发版本号</p>
+</blockquote>
+<p>在代码提交至远程仓库并要上线时，首先需要将dev分支合并到master分支，然后在master分支上打tag标签，依次有以下一些步骤</p>
+<ul>
+<li>git checkout master  （切至主线分支）</li>
+<li>git merge dev  （合并dev分支）</li>
+<li>git tag -a v1.2.2.0 -m “v1.2.2.0”  （添加版本号）</li>
+<li>git push origin master  （提交到仓库）</li>
+<li>git push –tag  （将版本信息提交到仓库）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git checkout master                <span class="comment">//切至主线分支</span></span><br><span class="line">git merge dev                      <span class="comment">//合并dev分支</span></span><br><span class="line">git tag -a v1<span class="number">.2</span><span class="number">.2</span><span class="number">.0</span> -m <span class="string">"v1.2.2.0"</span>  <span class="comment">//添加版本号</span></span><br><span class="line">git push origin master             <span class="comment">//提交到仓库</span></span><br><span class="line">git push --tag                     <span class="comment">//将版本信息提交到仓库</span></span><br></pre></td></tr></table></figure>
+<h2 id="常用技巧操作"><a href="#常用技巧操作" class="headerlink" title="常用技巧操作"></a>常用技巧操作</h2><h3 id="撤销操作"><a href="#撤销操作" class="headerlink" title="撤销操作"></a>撤销操作</h3><p>当git add文件后，发现这些文件并不想添加至暂存区，可以使用git reset命令</p>
+<ul>
+<li>git reset HEAD xxx  （撤回暂存的xxx）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD /app/<span class="built_in">module</span>/main.js</span><br></pre></td></tr></table></figure>
+<p>当文件修改后，并不想保留文件的修改，而是希望撤销至最近一次commit的版本，使用git checkout</p>
+<ul>
+<li>git checkout – xxx  （撤销修改回退）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout --<span class="regexp">/app/m</span>odule/main.js</span><br></pre></td></tr></table></figure>
+<p>当提交已经commit至本地仓库后，想要取消本次commit，使用git reset –hard <hash>，hash表示的是每次提交产生的hash值</hash></p>
+<ul>
+<li>git reset –hard <hash>  （撤销此次’hash’提交）</hash></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard <span class="number">6</span>c8139366cbafdfdad01e30b43c5c04e04b6ba86</span><br></pre></td></tr></table></figure>
+<h3 id="本地开发的项目上传至github中"><a href="#本地开发的项目上传至github中" class="headerlink" title="本地开发的项目上传至github中"></a>本地开发的项目上传至github中</h3><p>有的时候我们是现在本地开发好项目，可能觉得这个项目比较好，才会想着上传到github上。</p>
+<p>首先在github上创建一个新的仓库，创建完成后会生成一个远程仓库的地址，假如为<br><a href="https://github.com/HappyDoublekang/VueProject.git" target="_blank" rel="noopener">https://github.com/HappyDoublekang/VueProject.git</a></p>
+<p>然后在本地的项目中运行git命令，依次如下</p>
+<ul>
+<li>git init  （初始化）</li>
+<li>git add README.md  （添加注释md）</li>
+<li>git commit -m “first commit”  （第一次暂存）</li>
+<li>git remote add origin <a href="https://github.com/HappyDoublekang/VueProject.git" target="_blank" rel="noopener">https://github.com/HappyDoublekang/VueProject.git</a> （项目怼进这个仓库）</li>
+<li>git push -u origin master  （提交保存）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m <span class="string">"first commit"</span></span><br><span class="line">git remote add origin https:<span class="comment">//github.com/HappyDoublekang/VueProject.git</span></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<h3 id="删除远程和本地分支"><a href="#删除远程和本地分支" class="headerlink" title="删除远程和本地分支"></a>删除远程和本地分支</h3><p>假如某一次操作，我们将分支的名字输错了，并push至远程仓库，此时我们应该将远程仓库的这个分支给删掉，需要用到一下命令</p>
+<ul>
+<li>git push origin –delete serverfix  （删除远程分支）</li>
+<li>git branch –d serverfix            （删除本地分支）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git push origin --<span class="keyword">delete</span> serverfix</span><br><span class="line">git branch --d serverfix</span><br></pre></td></tr></table></figure>
+<h3 id="关于pull和fetch"><a href="#关于pull和fetch" class="headerlink" title="关于pull和fetch"></a>关于pull和fetch</h3><p>首先我们要知道的是pull=fetch + merge</p>
+<p>如果我们使用pull命令，在本地开发完后，git add，git commit，然后git pull从远程拉取代码，这个时候可能出现冲突，在合并冲突后，git add，git commit，这个时候会重新产生一次提交<br>如果我们使用fetch+merge，在本地开发完后，git add，git commit，然后git fetch从远程拉取代码，这个时候并不会出现冲突，本地代码会出现一个FETCH-HEAD引用，表示最新的代码，然后git merge远程分支，这个时候才会出现冲突，在合并冲突后，git add，git commit，这个时候也会产生一次新的提交</p>
+
       
 
       
@@ -211,16 +289,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/14/git基本操作（本地文件上传到github）/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/14/git基本操作（本地文件上传到github）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/13/ES6模板字符串/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ES6模板字符串</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -240,106 +377,15 @@
 
 
 
-
-
-  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-
-if(true){
-	var gitalk = new Gitalk({
-  	clientID: '031d1d310f5237c4475a',
-  	clientSecret: '880795a27531785eb3ac3c693b19f525e267f647',
-  	repo: 'HappyDoublekang.github.io',
-  	owner: 'HappyDoublekang',
-  	admin: ['HappyDoublekang'],
-  	id: '',
-  	distractionFreeMode: 'true'
-})
-gitalk.render('gitalk-container') 
-}
-</script>
+  
+  
   
 
   
-    <article id="post-ES6模板字符串" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/13/ES6模板字符串/">ES6模板字符串</a>
-    </h1>
+
   
 
-        
-        <a href="/2019/03/13/ES6模板字符串/" class="archive-article-date">
-  	<time datetime="2019-03-13T01:45:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="为了能够让我们更加方便的拼接，操作字符串，ES6出了模板字符串。"><a href="#为了能够让我们更加方便的拼接，操作字符串，ES6出了模板字符串。" class="headerlink" title="为了能够让我们更加方便的拼接，操作字符串，ES6出了模板字符串。"></a>为了能够让我们更加方便的拼接，操作字符串，ES6出了模板字符串。</h2><p>模板字符串是用`反引号代替常规字符串的’单引号或者”双引号，从而让字符串拥有可以将一部分替换成变量拼接在一起能力，当然，模板字符串不仅仅如此。</p>
-<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="先看一个简单的例子"><a href="#先看一个简单的例子" class="headerlink" title="先看一个简单的例子"></a>先看一个简单的例子</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> message = <span class="string">`hello`</span>;</span><br><span class="line"><span class="built_in">console</span>.log(message); <span class="comment">// "hello" </span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> message); <span class="comment">// "string"</span></span><br><span class="line"><span class="built_in">console</span>.log(message.length); <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
-<p>通过上述例子，可以看出，其实模板字符串创建的就是普通的字符串，没有什么特别的地方。当然，如果想<strong>创建多行的字符串</strong>，以前的方法可能是这样：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> text = <span class="string">"hello\nworld"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(text);  <span class="comment">//hello</span></span><br><span class="line">                    <span class="comment">//world</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/03/13/ES6模板字符串/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">模板字符串</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/13/ES6模板字符串/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
+  
 
 
 
@@ -356,115 +402,13 @@ if(true){
   	repo: 'HappyDoublekang.github.io',
   	owner: 'HappyDoublekang',
   	admin: ['HappyDoublekang'],
-  	id: '',
+  	id: 'Thu Mar 14 2019 10:12:25 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 
 }
 </script>
   
-
-  
-    <article id="post-test" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/12/test/">test</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/12/test/" class="archive-article-date">
-  	<time datetime="2019-03-12T02:39:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><p><code>$ rm -rf /</code></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#inlcude<span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        printf('hello world');</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p><del>删除线</del><br><strong>加粗</strong></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">test</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/12/test/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-
-if(true){
-	var gitalk = new Gitalk({
-  	clientID: '031d1d310f5237c4475a',
-  	clientSecret: '880795a27531785eb3ac3c693b19f525e267f647',
-  	repo: 'HappyDoublekang.github.io',
-  	owner: 'HappyDoublekang',
-  	admin: ['HappyDoublekang'],
-  	id: '',
-  	distractionFreeMode: 'true'
-})
-gitalk.render('gitalk-container') 
-}
-</script>
-  
-
-  
-  
-
 
           </div>
         </div>
@@ -489,8 +433,8 @@ gitalk.render('gitalk-container')
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
