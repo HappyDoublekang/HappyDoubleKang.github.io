@@ -12,7 +12,7 @@ tags: [Vue]
 
 弹出dialog对话框的时候点击确定按钮使表格重新加载
 
-```c++
+```Typescript
 <el-dialog>
     <el-button @click="resetForm()">继续新增</el-button>
 </el-dialog>
