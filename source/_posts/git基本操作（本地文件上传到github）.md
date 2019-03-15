@@ -6,9 +6,9 @@ tags: [Git]
 
 > clone项目到本地
 
-<!-- more -->
+使用Git的第一步永远是git clone，clone下来的文件夹名称默认为url最后一个斜杠后面的名称，如果不想用默认的名称，我们还可以通过在url后面传递参数来修改默认的名称，如下代码。
 
-使用Git的第一步永远是git clone，clone下来的文件夹名称默认为url最后一个斜杠后面的名称，如果不想用默认的名称，我们还可以通过在url后面传递参数来修改默认的名称，如下代码
+<!-- more -->
 
 ```javascript
 git clone https://github.com/HappyDoublekang/VueProject.git
