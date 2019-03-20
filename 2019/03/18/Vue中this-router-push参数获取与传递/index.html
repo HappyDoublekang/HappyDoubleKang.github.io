@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="剑起生寒轻酌墨">
 <meta property="og:description" content="传递参数的方法：   Params">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-18T06:24:37.405Z">
+<meta property="og:updated_time" content="2019-03-20T10:13:03.340Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue中this.$router.push参数获取与传递">
 <meta name="twitter:description" content="传递参数的方法：   Params">
@@ -227,7 +227,7 @@ var _hmt = _hmt || [];
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    path:<span class="string">'change_to_new_router'</span>,</span><br><span class="line">    name:<span class="string">'changeToNewRouter'</span>,</span><br><span class="line">    components:&#123;</span><br><span class="line">        <span class="keyword">default</span>:changeToNewRouter</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这里的path是显示在url上的地址，name和default则对应上方定义的路由页面</p>
 <p><code>在目标页面通过this.$route.params获取参数：</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    components:&#123;ElRow&#125;,</span><br><span class="line">    name:<span class="string">'update'</span>,</span><br><span class="line">    data() &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            id: <span class="keyword">this</span>.$router.params.id,</span><br><span class="line">            code: <span class="keyword">this</span>.$router.params.code</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    components:&#123;ElRow&#125;,</span><br><span class="line">    name:<span class="string">'update'</span>,</span><br><span class="line">    data() &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            id: <span class="keyword">this</span>.$route.params.id,</span><br><span class="line">            code: <span class="keyword">this</span>.$route.params.code</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这样就可以通过$.router.params将页面的参数带入目标页面使用了</p>
 <ul>
 <li>Query</li>
@@ -552,15 +552,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">模板字符串</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
