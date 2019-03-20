@@ -59,8 +59,8 @@ export default {
     name:'update',
     data() {
         return {
-            id: this.$router.params.id,
-            code: this.$router.params.code
+            id: this.$route.params.id,
+            code: this.$route.params.code
         }
     }
 }
