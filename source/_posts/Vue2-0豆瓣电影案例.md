@@ -581,9 +581,6 @@ watch: {
 }
 ```
 
-这样我们就可以使用/api/movie/in_theaters代替http://api.douban.com/v2/movie/in_theaters进行访问了， 跨域问题也就解决。
-
-
 ### 详情
 
 ```TypeScript
