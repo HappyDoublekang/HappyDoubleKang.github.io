@@ -4,7 +4,7 @@ date: 2019-05-05 10:27:25
 tags: [Algorithm,JavaScript]
 ---
 
-### start
+### Study-01
 
 由简入繁的算法学习，先从简单的逻辑思维开始。
 
