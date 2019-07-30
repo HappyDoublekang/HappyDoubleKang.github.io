@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/4 | 剑起生寒轻酌墨</title>
+  <title>Vue-Element在项目中遇到的一些坑（一） | 剑起生寒轻酌墨</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="剑起生寒轻酌墨">
-<meta property="og:url" content="http://yoursite.com/archives/2019/04/index.html">
+  <meta name="description" content="目前在用Vue框架结合element做后台管理系统，遇到了一些坑和大家分享一下。 先简单介绍一下这个坑产生的公司业务场景">
+<meta name="keywords" content="Vue,element">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue-Element在项目中遇到的一些坑（一）">
+<meta property="og:url" content="http://yoursite.com/2019/07/30/Vue-Element在项目中遇到的一些坑（一）/index.html">
 <meta property="og:site_name" content="剑起生寒轻酌墨">
+<meta property="og:description" content="目前在用Vue框架结合element做后台管理系统，遇到了一些坑和大家分享一下。 先简单介绍一下这个坑产生的公司业务场景">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-30T12:57:49.580Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="剑起生寒轻酌墨">
+<meta name="twitter:title" content="Vue-Element在项目中遇到的一些坑（一）">
+<meta name="twitter:description" content="目前在用Vue框架结合element做后台管理系统，遇到了一些坑和大家分享一下。 先简单介绍一下这个坑产生的公司业务场景">
   
     <link rel="alternative" href="/atom.xml" title="剑起生寒轻酌墨" type="application/atom+xml">
   
@@ -175,36 +180,102 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Vue-Element在项目中遇到的一些坑（一）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/01/Vue2-0豆瓣电影案例/" class="archive-article-date">
-  	<time datetime="2019-04-01T06:10:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-01</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/01/Vue2-0豆瓣电影案例/">Vue 2.0 豆瓣电影项目</a>
+    <h1 class="article-title" itemprop="name">
+      Vue-Element在项目中遇到的一些坑（一）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        <!--显示阅读次数-->
+        <!-- 
+          <br/>
+          <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+          <span class="icon-sort"></span>
+          <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+                    阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+          </span>
+          </a>
+           -->
+        
+        <a href="/2019/07/30/Vue-Element在项目中遇到的一些坑（一）/" class="archive-article-date">
+  	<time datetime="2019-07-30T01:49:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="目前在用Vue框架结合element做后台管理系统，遇到了一些坑和大家分享一下。"><a href="#目前在用Vue框架结合element做后台管理系统，遇到了一些坑和大家分享一下。" class="headerlink" title="目前在用Vue框架结合element做后台管理系统，遇到了一些坑和大家分享一下。"></a>目前在用Vue框架结合element做后台管理系统，遇到了一些坑和大家分享一下。</h2><blockquote>
+<p>先简单介绍一下这个坑产生的公司业务场景</p>
+</blockquote>
+<a id="more"></a>
+<p>公司系统需要在任何一个页面任何一次http请求，增加对token过期的判断，如果token已过期，需要跳转至登录页面。如果要在每个页面中的http请求操作中添加一次判断，那么会是一个非常大的修改工作量。</p>
+<p>a few moments later…</p>
+<h3 id="经过谷歌上百度一下发现（当然是用vue拦截器啦），这个大伙肯定都知道，这有啥坑的呢，照搬一套，撸码到自己页面上"><a href="#经过谷歌上百度一下发现（当然是用vue拦截器啦），这个大伙肯定都知道，这有啥坑的呢，照搬一套，撸码到自己页面上" class="headerlink" title="经过谷歌上百度一下发现（当然是用vue拦截器啦），这个大伙肯定都知道，这有啥坑的呢，照搬一套，撸码到自己页面上"></a>经过谷歌上百度一下发现（当然是用vue拦截器啦），这个大伙肯定都知道，这有啥坑的呢，照搬一套，撸码到自己页面上</h3><p>下边代码添加在main.js中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*vue-resource请求拦截器*/</span></span><br><span class="line">Vue.http.interceptors.push(<span class="function">(<span class="params">request, next</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (request.url) &#123;</span><br><span class="line">        <span class="keyword">let</span> ticket = <span class="string">''</span>;</span><br><span class="line">        <span class="keyword">let</span> auth_ticket = <span class="string">''</span>; <span class="comment">// AUTH_TICKET</span></span><br><span class="line">        <span class="keyword">if</span> (isAdmin) &#123;</span><br><span class="line">            ticket = sessionStorage.getItem(<span class="string">'adminticket'</span>); <span class="comment">//超级管理员</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            ticket = sessionStorage.getItem(<span class="string">'partnerticket'</span>);  <span class="comment">//合作伙伴</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (ticket != <span class="literal">undefined</span> &amp;&amp; ticket != <span class="literal">null</span> &amp;&amp; ticket != <span class="string">"null"</span> &amp;&amp; ticket != <span class="string">""</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (request.url.indexOf(<span class="string">"?"</span>) != <span class="number">-1</span>) &#123;</span><br><span class="line">                request.url = request.url  + <span class="string">"&amp;domain="</span> + (isAdmin ? <span class="string">'admin'</span> : <span class="string">'partner'</span>) + <span class="string">"&amp;isAjax=true"</span> + <span class="string">"&amp;ticket="</span> + ticket</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                request.url = request.url  + <span class="string">"?&amp;domain="</span> + (isAdmin ? <span class="string">'admin'</span> : <span class="string">'partner'</span>) + <span class="string">"&amp;isAjax=true"</span> + <span class="string">"?ticket="</span> + ticket</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// alert("没有获取到合管存储SessionStorage的值：ticket");</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// alert("没有获取到请求接口的URL");</span></span><br><span class="line">    &#125;</span><br><span class="line">    next(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="是的没错，我们的token转换成了ticket存在session里面，不要在意这些细节…"><a href="#是的没错，我们的token转换成了ticket存在session里面，不要在意这些细节…" class="headerlink" title="是的没错，我们的token转换成了ticket存在session里面，不要在意这些细节…"></a>是的没错，我们的token转换成了ticket存在session里面，不要在意这些细节…</h3><p>一开始业务让我们把ticket也就是token拼接在所有页面的接口请求后面，开心的一腿，这还不简单，疯狂拼接一坨之后…</p>
+<p>发现好了，没事了继续划水，然后特么的，业务的嘴，骗人的鬼，果然那个吊毛又不满意了，让我把ticket拿下来，放到请求头里去(此时心中一万匹草泥马跑过)</p>
+<p>拿就拿吧，此时还没发现问题即将出现，新的风暴即将来临，拦截器把token放请求头的方法如下(重复代码就不贴了)：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">request.headers.set(<span class="string">'ticket'</span>, ticket)   </span><br><span class="line"><span class="built_in">document</span>.cookie = <span class="string">`AUTH_TICKET=<span class="subst">$&#123;ticket&#125;</span>;path=/`</span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">if</span> (request.url.indexOf(<span class="string">"?"</span>) != <span class="number">-1</span>) &#123;</span><br><span class="line">    request.url = request.url  + <span class="string">"&amp;domain="</span> + (isAdmin ? <span class="string">'admin'</span> : <span class="string">'partner'</span>) + <span class="string">"&amp;isAjax=true"</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    request.url = request.url  + <span class="string">"?&amp;domain="</span> + (isAdmin ? <span class="string">'admin'</span> : <span class="string">'partner'</span>) + <span class="string">"&amp;isAjax=true"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>弄个<code>request.headers.set(&#39;ticket&#39;, ticket)</code>方法即可</p>
+<h3 id="突然发现有点问题，因为拦截器有一个坑，无法拦截下载excel等文件的请求，此时内心是崩溃的，这可咋整…"><a href="#突然发现有点问题，因为拦截器有一个坑，无法拦截下载excel等文件的请求，此时内心是崩溃的，这可咋整…" class="headerlink" title="突然发现有点问题，因为拦截器有一个坑，无法拦截下载excel等文件的请求，此时内心是崩溃的，这可咋整…"></a>突然发现有点问题，因为拦截器有一个坑，无法拦截下载excel等文件的请求，此时内心是崩溃的，这可咋整…</h3><p>好了不多说，直接上解决办法</p>
+<h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── build                   <span class="comment">// 构建后路径</span></span><br><span class="line">│   ├── build.js</span><br><span class="line">│   ├── check-versions.js</span><br><span class="line">│   ├── dev-client.js</span><br><span class="line">│   ├── dev-server.js</span><br><span class="line">│   ├── utils.js</span><br><span class="line">│   ├── vue-loader.conf.js</span><br><span class="line">│   ├── webpack.base.conf.js</span><br><span class="line">│   ├── webpack.dev.conf.js</span><br><span class="line">│   └── webpack.prod.conf.js</span><br><span class="line">├── config                  <span class="comment">// 配置文件</span></span><br><span class="line">│   ├── dev.env.js</span><br><span class="line">│   ├── index.js            <span class="comment">// api的转发拦截</span></span><br><span class="line">│   └── prod.env.js</span><br><span class="line">├── src</span><br><span class="line">│   ├── assets</span><br><span class="line">│   ├── components</span><br><span class="line">|   ├── extend              </span><br><span class="line">|   |   ├── api.js          <span class="comment">// 接口统一管理</span></span><br><span class="line">|   |   ├── utils.js        <span class="comment">// 公共方法统一调用</span></span><br><span class="line">│   ├── router              <span class="comment">// 路由</span></span><br><span class="line">│   │   ├── index.js </span><br><span class="line">│   ├── App.vue</span><br><span class="line">│   ├── main.js             <span class="comment">// 入口文件</span></span><br><span class="line">├── <span class="keyword">static</span></span><br><span class="line">├── README.md</span><br><span class="line">├── index.html</span><br><span class="line">├── package.json</span><br></pre></td></tr></table></figure>
+<ol>
+<li>设置公共方法untils</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> utils = &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 导出（post/get）</span></span><br><span class="line"><span class="comment">     * @param methods</span></span><br><span class="line"><span class="comment">     * @param params（obj）</span></span><br><span class="line"><span class="comment">     * @param api</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    exportIt(methods, params, api) &#123;</span><br><span class="line">        <span class="keyword">let</span> ticket =  sessionStorage.getItem(<span class="string">'adminticket'</span>) || sessionStorage.getItem(<span class="string">'partnerticket'</span>);</span><br><span class="line">        <span class="comment">/*post*/</span></span><br><span class="line">        <span class="keyword">if</span> (methods == <span class="string">'post'</span>) &#123;</span><br><span class="line">            <span class="keyword">var</span> url = api;</span><br><span class="line">            <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">            xhr.open(<span class="string">'POST'</span>, url, <span class="literal">true</span>); <span class="comment">// 也可以使用POST方式，根据接口</span></span><br><span class="line">            xhr.setRequestHeader(<span class="string">'Content-Type'</span>, <span class="string">'application/json'</span>);</span><br><span class="line">            xhr.setRequestHeader(<span class="string">'ticket'</span>, ticket);</span><br><span class="line">            xhr.responseType = <span class="string">"blob"</span>; <span class="comment">// 返回类型blob</span></span><br><span class="line">            <span class="comment">// 定义请求完成的处理函数，请求前也可以增加加载框/禁用下载按钮逻辑</span></span><br><span class="line">            xhr.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="comment">// 请求完成</span></span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">this</span>.status === <span class="number">200</span>) &#123;</span><br><span class="line">                    <span class="comment">// 获取文件名称</span></span><br><span class="line">                    <span class="keyword">let</span> nameArr = xhr.getResponseHeader(<span class="string">'content-disposition'</span>);</span><br><span class="line">                    <span class="keyword">let</span> filename;</span><br><span class="line">                    <span class="keyword">if</span> (nameArr) &#123;</span><br><span class="line">                        filename = nameArr.split(<span class="string">'filename='</span>)[<span class="number">1</span>]</span><br><span class="line">                        filename = <span class="built_in">decodeURIComponent</span>(filename)</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        filename = <span class="string">'未命名'</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="comment">// 返回200</span></span><br><span class="line">                    <span class="keyword">var</span> blob = <span class="keyword">this</span>.response;</span><br><span class="line">                    <span class="comment">// var name = this.response.getHearder;</span></span><br><span class="line">                    <span class="keyword">var</span> reader = <span class="keyword">new</span> FileReader();</span><br><span class="line">                    reader.readAsDataURL(blob); <span class="comment">// 转换为base64，可以直接放入a表情href</span></span><br><span class="line">                    reader.onload = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">                        <span class="comment">// 转换完成，创建一个a标签用于下载</span></span><br><span class="line">                        <span class="keyword">var</span> a = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);</span><br><span class="line">                        a.download = filename;</span><br><span class="line">                        a.href = e.target.result;</span><br><span class="line">                        <span class="built_in">document</span>.body.append(a); <span class="comment">// 修复firefox中无法触发click</span></span><br><span class="line">                        a.click();</span><br><span class="line">                        a.remove();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br><span class="line">            <span class="comment">// 发送ajax请求</span></span><br><span class="line">            xhr.send(<span class="built_in">JSON</span>.stringify(params))</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(methods == <span class="string">'get'</span>)&#123;</span><br><span class="line">            <span class="keyword">let</span> getApi = api + <span class="string">'?'</span> + <span class="keyword">this</span>.urlEncode(params);</span><br><span class="line">            <span class="keyword">let</span> nowDate = <span class="keyword">this</span>.getNowDatePlus();</span><br><span class="line">            <span class="keyword">let</span> execlName = <span class="string">'渠道信息列表'</span> + nowDate + <span class="string">'.xlsx'</span>;</span><br><span class="line">            <span class="keyword">let</span> token = <span class="string">''</span>;</span><br><span class="line">            <span class="keyword">if</span>(sessionStorage.getItem(<span class="string">'adminticket'</span>))&#123;</span><br><span class="line">                token = sessionStorage.getItem(<span class="string">'adminticket'</span>);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                token = sessionStorage.getItem(<span class="string">'partnerticket'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            Vue.http.get(getApi, &#123;</span><br><span class="line">                headers:&#123;</span><br><span class="line">                    <span class="string">"ticket"</span>:token</span><br><span class="line">                &#125;,</span><br><span class="line">                responseType: <span class="string">'blob'</span>, <span class="comment">//二进制流</span></span><br><span class="line">            &#125;).then(<span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(!res) <span class="keyword">return</span></span><br><span class="line">                <span class="keyword">let</span> blob = <span class="keyword">new</span> Blob([res.data], &#123;<span class="attr">type</span>: <span class="string">'application/vnd.ms-excel;charset=utf-8'</span>&#125;)</span><br><span class="line">                <span class="keyword">let</span> getApi = <span class="built_in">window</span>.URL.createObjectURL(blob);</span><br><span class="line">                <span class="keyword">let</span> aLink = <span class="built_in">document</span>.createElement(<span class="string">"a"</span>);</span><br><span class="line">                aLink.style.display = <span class="string">"none"</span>;</span><br><span class="line">                aLink.href = getApi;</span><br><span class="line">                aLink.setAttribute(<span class="string">"download"</span>, execlName);</span><br><span class="line">                <span class="built_in">document</span>.body.appendChild(aLink);</span><br><span class="line">                aLink.click();</span><br><span class="line">                <span class="built_in">document</span>.body.removeChild(aLink);</span><br><span class="line">                <span class="built_in">window</span>.URL.revokeObjectURL(getApi);</span><br><span class="line">            &#125;).catch(<span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(error)</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">/*get*/</span></span><br><span class="line">        <span class="comment">// window.open(api + '?' + this.urlEncode(params));</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> utils;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>在需要用到下载的页面调用公共方法即可，支持get和post请求</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> params = &#123;</span><br><span class="line">    <span class="string">'xxx'</span>: <span class="keyword">this</span>.xxx,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">this</span>.utils.exportIt(<span class="string">'get'</span>, params, <span class="keyword">this</span>.api.xxx)</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>大爷赏点ε=(´ο｀*)<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/thank.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/thanks.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -216,26 +287,144 @@ var _hmt = _hmt || [];
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">element</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">axios</a>
-        		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <!-- <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/30/Vue-Element在项目中遇到的一些坑（一）/" alt="微信分享二维码"> -->
+      <img src="https://raw.githubusercontent.com/HappyDoublekang/image/master/wechart.png" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/05/05/Algorithm入门Day2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Algorithm入门Day2</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#目前在用Vue框架结合element做后台管理系统，遇到了一些坑和大家分享一下。"><span class="toc-number">1.</span> <span class="toc-text">目前在用Vue框架结合element做后台管理系统，遇到了一些坑和大家分享一下。</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#经过谷歌上百度一下发现（当然是用vue拦截器啦），这个大伙肯定都知道，这有啥坑的呢，照搬一套，撸码到自己页面上"><span class="toc-number">1.1.</span> <span class="toc-text">经过谷歌上百度一下发现（当然是用vue拦截器啦），这个大伙肯定都知道，这有啥坑的呢，照搬一套，撸码到自己页面上</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#是的没错，我们的token转换成了ticket存在session里面，不要在意这些细节…"><span class="toc-number">1.2.</span> <span class="toc-text">是的没错，我们的token转换成了ticket存在session里面，不要在意这些细节…</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#突然发现有点问题，因为拦截器有一个坑，无法拦截下载excel等文件的请求，此时内心是崩溃的，这可咋整…"><span class="toc-number">1.3.</span> <span class="toc-text">突然发现有点问题，因为拦截器有一个坑，无法拦截下载excel等文件的请求，此时内心是崩溃的，这可咋整…</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#项目结构"><span class="toc-number">1.4.</span> <span class="toc-text">项目结构</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+  
+  
+  
   
 
+  
+
+  
+
+  
+  
+    <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: '031d1d310f5237c4475a',
+  	clientSecret: '880795a27531785eb3ac3c693b19f525e267f647',
+  	repo: 'HappyDoublekang.github.io',
+  	owner: 'HappyDoublekang',
+  	admin: ['HappyDoublekang'],
+  	id: 'Tue Jul 30 2019 09:49:43 GMT+0800',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
     
 
 
@@ -267,8 +456,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
